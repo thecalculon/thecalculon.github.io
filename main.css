@@ -6,12 +6,23 @@ body {
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
 font-weight: 300;
 color: #333;
+
+line-height: 1.6em;
 }
 
-h1{
+.container{
+ width: 80%
+ margin: auto;
+}
+
+body{
+	margin:20px;
+	padding: 20px;
+}
+/*h1{
     font-size: 30px
 }
 
 p{
     font-size: 20px
-}
+}*/
