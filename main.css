@@ -19,6 +19,34 @@ body{
 	margin:20px;
 	padding: 20px;
 }
+/*.block{
+	float:left;
+	width:33.3%;
+	border:1px solid #ccc;
+	padding: 10px
+	box-sizing:border-box;
+}*/
+
+.video-container {
+  /*position: absolute;*/
+  float:left;
+  width: 32.0%;
+  margin:5px;
+  
+}
+.video-container video {
+  /* Make video to at least 100% wide and tall */
+  object-fit: cover;
+}
+  /*min-width: 20%; 
+  min-height: 20%; 
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  /*width: auto;
+  height: auto;*/
+
+  /* Center the video */
+
 /*h1{
     font-size: 30px
 }
