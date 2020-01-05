@@ -1,56 +1,41 @@
 html {
     margin: 20px;
-   background-color: #EDF5C8; 
+   background-color: #ffffff; 
 }
+
 body {
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
 font-weight: 300;
 color: #333;
-
+margin:2px;
+padding: 2px;
 line-height: 1.6em;
 }
 
 .container{
- width: 80%
- margin: auto;
-}
+    width: 84%;
+    margin:auto;  
 
-body{
-	margin:20px;
-	padding: 20px;
 }
-/*.block{
-	float:left;
-	width:33.3%;
-	border:1px solid #ccc;
-	padding: 10px
-	box-sizing:border-box;
-}*/
-
+.box-0{
+    padding: 20px;
+    background-color: #f4f4f4; 
+}
+.box-1{
+    padding: 20px;
+    background-color: #f4f4f4; 
+}
 .video-container {
   /*position: absolute;*/
   float:left;
   width: 32.0%;
   margin:5px;
+  background-color: #f4f4f4; 
   
 }
 .video-container video {
   /* Make video to at least 100% wide and tall */
   object-fit: cover;
 }
-  /*min-width: 20%; 
-  min-height: 20%; 
 
-  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-  /*width: auto;
-  height: auto;*/
 
-  /* Center the video */
-
-/*h1{
-    font-size: 30px
-}
-
-p{
-    font-size: 20px
-}*/
