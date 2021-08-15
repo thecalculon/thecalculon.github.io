@@ -1,169 +1,73 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-   <link rel="stylesheet" href="/libs/highlight/github.min.css">
-   
-  <link rel="stylesheet" href="/css/franklin.css">
-<link rel="stylesheet" href="/css/minimal-mistakes.css">
-<link rel="stylesheet" href="/css/adjust.css">
-<link rel="icon" href="/assets/favicon.png">
-<!--[if IE ]>
-<style>
-  /* old IE unsupported flexbox fixes */
-  .greedy-nav .site-title {
-    padding-right: 3em;
-  }
-  .greedy-nav button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-  }
-</style>
-<![endif]-->
-
-   <title>  Writing python script for visualization</title>  
-  <!-- end custom head snippets -->
-</head>
-<body class="layout--single">
-  <div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/">Home</a>
-        <ul class="visible-links">
-          <li class="masthead__menu-item"><a href="/Research/" >Research</a></li>
-          <li class="masthead__menu-item"><a href="/journal/" >Blogs</a></li>
-          <li class="masthead__menu-item"><a href="/hacks/" >Unintended hacks</a></li>
-          <li class="masthead__menu-item"><a href="/About_me/">About me</a></li>
-        </ul>
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-  <div class="initial-content">
-    <div id="main" role="main">
-      <div class="sidebar sticky">
-        <div itemscope itemtype="https://schema.org/Person">
-          <div class="author__avatar">
-            <img src="/assets/minimal-mistakes/zenobia.png" alt="The anon" itemprop="image">
-          </div>
-          <div class="author__content">
-            <h3 class="author__name" itemprop="name">The anon</h3>
-            <p class="author__bio" itemprop="description">Definitely a layman</p>
-          </div>
-          <div class="author__urls-wrapper">
-            <button class="btn btn--inverse">Follow</button>
-            <ul class="author__urls social-icons">
-              <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-                <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span
-                    itemprop="name">Palymra</span></li>
-              <li><a href="404.html" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-              <li><a href="https://github.com/thecalculon" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-<!-- Content appended here -->
-<div class="franklin-content"><h1 id="introduction"><a href="#introduction" class="header-anchor">Introduction </a></h1>
-<p>If you have somehow stumbled here, then I believe you must have struggled as I have to use visit cli for visualizations</p>
-<h2 id="basic_import"><a href="#basic_import" class="header-anchor">Basic import</a></h2>
-<pre><code class="language-python">from visit_utils import *</code></pre>
-<h2 id="the_call_format"><a href="#the_call_format" class="header-anchor">The call format</a></h2>
+<!doctype html> <!-- Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes Free for personal and commercial use under the MIT license https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE --> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/franklin.css"> <link rel=stylesheet  href="/css/minimal-mistakes.css"> <link rel=stylesheet  href="/css/adjust.css"> <link rel=icon  href="/assets/favicon.png"> <!--[if IE ]> <style> /* old IE unsupported flexbox fixes */ .greedy-nav .site-title { padding-right: 3em; } .greedy-nav button { position: absolute; top: 0; right: 0; height: 100%; } </style> <![endif]--> <title> Writing python script for visualization</title> <body class=layout--single > <div class=masthead > <div class=masthead__inner-wrap > <div class=masthead__menu > <nav id=site-nav  class=greedy-nav > <a class=site-title  href="/">Home</a> <ul class=visible-links > <li class=masthead__menu-item ><a href="/Research/" >Research</a> <li class=masthead__menu-item ><a href="/journal/" >Blogs</a> <li class=masthead__menu-item ><a href="/hacks/" >Unintended hacks</a> <li class=masthead__menu-item ><a href="/About_me/">About me</a> </ul> <button class="greedy-nav__toggle hidden" type=button > <span class=visually-hidden >Toggle menu</span> <div class=navicon ></div> </button> <ul class="hidden-links hidden"></ul> </nav> </div> </div> </div> <div class=initial-content > <div id=main  role=main > <div class="sidebar sticky"> <div itemscope itemtype="https://schema.org/Person"> <div class=author__avatar > <img src="/assets/minimal-mistakes/zenobia.png" alt="The anon" itemprop=image > </div> <div class=author__content > <h3 class=author__name  itemprop=name >The anon</h3> <p class=author__bio  itemprop=description >Definitely a layman</p> </div> <div class=author__urls-wrapper > <button class="btn btn--inverse">Follow</button> <ul class="author__urls social-icons"> <li itemprop=homeLocation  itemscope itemtype="https://schema.org/Place"> <i class="fas fa-fw fa-map-marker-alt" aria-hidden=true ></i> <span itemprop=name >Palymra</span> <li><a href=404.html  rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden=true ></i> Twitter</a> <li><a href="https://github.com/thecalculon" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden=true ></i> GitHub</a> </ul> </div> </div> </div> <div class=franklin-content ><h1 id=introduction ><a href="#introduction" class=header-anchor >Introduction </a></h1> <p>If you have somehow stumbled here, then I believe you must have struggled as I have to use visit cli for visualizations</p> <h2 id=basic_import ><a href="#basic_import" class=header-anchor >Basic import</a></h2> <pre><code class="python hljs"><span class=hljs-keyword >from</span> visit_utils <span class=hljs-keyword >import</span> *</code></pre>
+<h2 id=the_call_format ><a href="#the_call_format" class=header-anchor >The call format</a></h2>
 <p>The basic calls follows. For example to set a view </p>
-<pre><code class="language-python">ResetView&#40;&#41;
-v &#61; GetView3D&#40;&#41;
-v.viewNormal &#61; &#40;0.5, -0.4, 0.1&#41;
-v.viewUp &#61; &#40;0, 0, 1&#41;
-SetView3D&#40;v&#41;</code></pre>
-<pre><code class="language-python">ats &#61; AnnotationAttributes&#40;&#41;
-ats.axes3D.visible &#61; 0
-ats.axes3D.triadFlag &#61; 1
-ats.axes3D.bboxFlag &#61; 0
-ats.userInfoFlag &#61; 0
-ats.databaseInfoFlag &#61; 1
-ats.legendInfoFlag &#61; 1
-ats.axes3D.xAxis.grid &#61; 0
-ats.axes3D.yAxis.grid &#61; 0
-ats.axes3D.zAxis.grid &#61; 0
-ats.axes3D.yAxis.label.font.bold &#61; 0
-ats.axes3D.yAxis.label.font.scale &#61; 1
-ats.axes3D.setBBoxLocation &#61; 1
-ats.axes3D.lineWidth &#61; 6
-ats.axes3D.bboxLocation &#61; &#40;n1l, n1u, n2l, n2u, n3l, n3u&#41; 
-SetAnnotationAttributes&#40;ats&#41;</code></pre>
-<pre><code class="language-python">s &#61; SaveWindowAttributes&#40;&#41;
-s.format &#61; s.POSTSCRIPT
-s.fileName &#61; ofl 
-s.outputDirectory &#61; &quot;./&quot;
-s.width, s.height &#61; 768,512
-s.screenCapture &#61; 0
-SetSaveWindowAttributes&#40;s&#41;</code></pre>
+<pre><code class="python hljs">ResetView()
+v = GetView3D()
+v.viewNormal = (<span class=hljs-number >0.5</span>, -<span class=hljs-number >0.4</span>, <span class=hljs-number >0.1</span>)
+v.viewUp = (<span class=hljs-number >0</span>, <span class=hljs-number >0</span>, <span class=hljs-number >1</span>)
+SetView3D(v)</code></pre>
+<pre><code class="python hljs">ats = AnnotationAttributes()
+ats.axes3D.visible = <span class=hljs-number >0</span>
+ats.axes3D.triadFlag = <span class=hljs-number >1</span>
+ats.axes3D.bboxFlag = <span class=hljs-number >0</span>
+ats.userInfoFlag = <span class=hljs-number >0</span>
+ats.databaseInfoFlag = <span class=hljs-number >1</span>
+ats.legendInfoFlag = <span class=hljs-number >1</span>
+ats.axes3D.xAxis.grid = <span class=hljs-number >0</span>
+ats.axes3D.yAxis.grid = <span class=hljs-number >0</span>
+ats.axes3D.zAxis.grid = <span class=hljs-number >0</span>
+ats.axes3D.yAxis.label.font.bold = <span class=hljs-number >0</span>
+ats.axes3D.yAxis.label.font.scale = <span class=hljs-number >1</span>
+ats.axes3D.setBBoxLocation = <span class=hljs-number >1</span>
+ats.axes3D.lineWidth = <span class=hljs-number >6</span>
+ats.axes3D.bboxLocation = (n1l, n1u, n2l, n2u, n3l, n3u) 
+SetAnnotationAttributes(ats)</code></pre>
+<pre><code class="python hljs">s = SaveWindowAttributes()
+s.<span class=hljs-built_in >format</span> = s.POSTSCRIPT
+s.fileName = ofl 
+s.outputDirectory = <span class=hljs-string >&quot;./&quot;</span>
+s.width, s.height = <span class=hljs-number >768</span>,<span class=hljs-number >512</span>
+s.screenCapture = <span class=hljs-number >0</span>
+SetSaveWindowAttributes(s)</code></pre>
 <p>The different available formats are PNG, BMP, CURVE, JPEG, OBJ, PNG, POSTSCRIPT, POVRAY, PPM, RGB, STL, TIFF, ULTRA, VTK, PLY, and EXR.</p>
-<h1 id="the_plotting"><a href="#the_plotting" class="header-anchor">The plotting</a></h1>
+<h1 id=the_plotting ><a href="#the_plotting" class=header-anchor >The plotting</a></h1>
 <p>Finally to plot the </p>
-<pre><code class="language-python">OpenDatabase&#40;&#39;infile.h5&#39;&#41;
-AddPlot&#40;&quot;Contour&quot;, &quot;database_name&quot;&#41;
-pc &#61; ContourAttributes&#40;&#41;
-pc.contourMethod &#61; pc.Value
-pc.contourValue &#61; &#40;-0.01, 0.01&#41;
-pc.SetMultiColor&#40;0, &#40;255, 127,   0, 255&#41; &#41;
-pc.SetMultiColor&#40;1, &#40;106,  61, 154, 255&#41; &#41;
-SetPlotOptions&#40;pc&#41;
-DrawPlots&#40;&#41; 
-SaveWindow&#40;&#41;
-CloseDatabase&#40;&#41;
-exit&#40;&#41;</code></pre>
-<div class="page-foot">
-  <div class="copyright">
-    &copy; The anon. Last modified: August 13, 2021. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+<pre><code class="python hljs">OpenDatabase(<span class=hljs-string >&#x27;infile.h5&#x27;</span>)
+AddPlot(<span class=hljs-string >&quot;Contour&quot;</span>, <span class=hljs-string >&quot;database_name&quot;</span>)
+pc = ContourAttributes()
+pc.contourMethod = pc.Value
+pc.contourValue = (-<span class=hljs-number >0.01</span>, <span class=hljs-number >0.01</span>)
+pc.SetMultiColor(<span class=hljs-number >0</span>, (<span class=hljs-number >255</span>, <span class=hljs-number >127</span>,   <span class=hljs-number >0</span>, <span class=hljs-number >255</span>) )
+pc.SetMultiColor(<span class=hljs-number >1</span>, (<span class=hljs-number >106</span>,  <span class=hljs-number >61</span>, <span class=hljs-number >154</span>, <span class=hljs-number >255</span>) )
+SetPlotOptions(pc)
+DrawPlots() 
+SaveWindow()
+CloseDatabase()
+exit()</code></pre>
+<div class=page-foot >
+  <div class=copyright >
+    &copy; The anon. Last modified: August 15, 2021. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
   </div>
 </div>
-</div><!-- CONTENT ENDS HERE -->
+</div>
 
-      </div> <!-- closure of main -->
-    </div>   <!-- closure of class initial--content -->
+      </div> 
+    </div>   
 
-    <div class="page__footer">
+    <div class=page__footer >
       <footer>
-        <!-- start custom footer snippets -->
-        <!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-          <ul class="social-icons">
-            <li><strong>Follow:</strong></li>
-            <li><a href="404.html" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-            <li><a href="https://github.com/thecalculon" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+        
+        <div class=page__footer-follow >
+          <ul class=social-icons >
+            <li><strong>Follow:</strong>
+            <li><a href=404.html  rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden=true ></i> Twitter</a>
+            <li><a href="https://github.com/thecalculon" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden=true ></i> GitHub</a>
           </ul>
         </div>
-        <div class="page__footer-copyright">&copy; The anon. Powered by <a href="https://github.com/tlienart/Franklin.jl">Franklin</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+        <div class=page__footer-copyright >&copy; The anon. Powered by <a href="https://github.com/tlienart/Franklin.jl">Franklin</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel=nofollow >Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
     <script src="/libs/minimal-mistakes/main.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
-
-    
-    
-        <script src="/libs/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
-
-    
-  </body>
-</html>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin=anonymous ></script>
