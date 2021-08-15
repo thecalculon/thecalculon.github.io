@@ -1,0 +1,87 @@
+There exists many other alternatives, like [[https://jekyllrb.com/][ jekyll]]  written in [[https://www.ruby-lang.org/en/ ][Ruby]],
+Now I should be able to export the $a = -\pi\sin {(-x)}$ in verbatim also would like to check $ \sqrt{2} $ here
+I can use the org mode to create the blog posts and it should be  very trivial here.
+The pandoc can convert the file formats easily
+/this line shou/
+
+$$  \varphi(E{X}) \le E{\varphi(X)}. \label{equation blah} $$
+
+since we've given it the label =\label{equation blah}=, we can refer it like so: \eqref{equation blah} which can be convenient for pages that are math-heavy.
+
+
+
+
+* Introduction
+If you have somehow stumbled here, then I believe you must have
+struggled as I have to use visit cli for visualizations ## Basic import
+
+#+begin_src python
+  from visit_utils import *
+#+end_src
+
+** The call format
+   :PROPERTIES:
+   :CUSTOM_ID: the-call-format
+   :END:
+The basic calls follows. For example to set a view
+
+#+begin_src python
+  ResetView()
+  v = GetView3D()
+  v.viewNormal = (0.5, -0.4, 0.1)
+  v.viewUp = (0, 0, 1)
+  SetView3D(v)
+#+end_src
+
+#+begin_src python
+  ats = AnnotationAttributes()
+  ats.axes3D.visible = 0
+  ats.axes3D.triadFlag = 1
+  ats.axes3D.bboxFlag = 0
+  ats.userInfoFlag = 0
+  ats.databaseInfoFlag = 1
+  ats.legendInfoFlag = 1
+  ats.axes3D.xAxis.grid = 0
+  ats.axes3D.yAxis.grid = 0
+  ats.axes3D.zAxis.grid = 0
+  ats.axes3D.yAxis.label.font.bold = 0
+  ats.axes3D.yAxis.label.font.scale = 1
+  ats.axes3D.setBBoxLocation = 1
+  ats.axes3D.lineWidth = 6
+  ats.axes3D.bboxLocation = (n1l, n1u, n2l, n2u, n3l, n3u) 
+  SetAnnotationAttributes(ats)
+#+end_src
+
+#+begin_src python
+  s = SaveWindowAttributes()
+  s.format = s.POSTSCRIPT
+  s.fileName = ofl 
+  s.outputDirectory = "./"
+  s.width, s.height = 768,512
+  s.screenCapture = 0
+  SetSaveWindowAttributes(s)
+#+end_src
+
+The different available formats are PNG, BMP, CURVE, JPEG, OBJ, PNG,
+POSTSCRIPT, POVRAY, PPM, RGB, STL, TIFF, ULTRA, VTK, PLY, and EXR.
+
+* The plotting
+  :PROPERTIES:
+  :CUSTOM_ID: the-plotting
+  :END:
+Finally to plot the
+
+#+begin_src python
+  OpenDatabase('infile.h5')
+  AddPlot("Contour", "database_name")
+  pc = ContourAttributes()
+  pc.contourMethod = pc.Value
+  pc.contourValue = (-0.01, 0.01)
+  pc.SetMultiColor(0, (255, 127,   0, 255) )
+  pc.SetMultiColor(1, (106,  61, 154, 255) )
+  SetPlotOptions(pc)
+  DrawPlots() 
+  SaveWindow()
+  CloseDatabase()
+  exit()
+#+end_src

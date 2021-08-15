@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <link rel="stylesheet" href="/libs/highlight/github.min.css">
+   
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="icon" href="/assets/favicon.png">
+   <title> Franklin to build website</title>  
+</head>
+<body>
+  <header>
+<div class="blog-name"><a href="/">Vikash Pandey</a></div>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/Research/">Research</a></li>
+    <li><a href="/journal/">Blogs</a></li>
+    <li><a href="/hacks/">Unintended hacks</a></li>
+  </ul>
+  <img src="/assets/hamburger.svg" id="menu-icon">
+</nav>
+</header>
+
+
+<!-- Content appended here -->
+<div class="franklin-content"><p><a href="https://franklinjl.org/">Franklin</a> is a static website generator written in <a href="https://julialang.org/">Julia</a>. There exists many other alternatives, like <a href="https://jekyllrb.com/"> jekyll</a> written in <a href="https://www.ruby-lang.org/en/ ">Ruby</a>, <a href="https://docs.getpelican.com/en/3.6.3/">Pelican</a> written in Python etc. I have not invested time in these alternatives to comment. <a href="https://franklinjl.org/">Franklin</a> has an extensive documentation and if all the instructions are followed correctly one should be able to set a nice looking website. I basically chose the <a href="https://tlienart.github.io/FranklinTemplates.jl/templates/minimal-mistakes/index.html">minimal-mistakes</a> temple. The snapshot shows the basic web-page which I was able to make.</p>
+<p><img src="/journal/snap_minimal.png" alt="img" /></p>
+<p>The idea is simple. Inside the folder there will be several markdown files, and the contents of each file is compiled as a html files and appear as a webpage. All the hard work is handled by the <a href="https://franklin.org">Franklin</a> and the user are only supposed to edit the markdown files.</p>
+<h1 id="emacs_as_an_editor"><a href="#emacs_as_an_editor" class="header-anchor">Emacs as an editor</a></h1>
+<p>I use <a href="https://www.gnu.org/software/emacs/">emacs</a> for almost all my daily work, form reading <a href="https://www.emacswiki.org/emacs/mu4e">mail</a> to browsing through different <a href="https://github.com/skeeto/elfeed">rss feeds</a>. Sometimes I also edit my texts files using emacs. It is most convinient for me to edit the markdown files directly using emacs &#40;easy approach&#41; or use the org markdown to write the blog and convert them into markdown &#40;.md&#41; &#40;hard approach&#41;. Clearly being a stupid guy who always like the tedious path, I chose the latter.</p>
+<h2 id="caveats"><a href="#caveats" class="header-anchor">Caveats</a></h2>
+<p>If you are an avid emacs user, then mapping the caps lock to control often helps the little finger. The best way is to use the <code>Xmodmap</code> or <code>setxkbmap</code>. I do so using the <code>setxkbmap</code> with the command</p>
+<pre><code class="language-shell">setxkbmap -option ctrl:nocaps</code></pre>
+<p>To revert one can always run <code>setxkbmap -option</code>.</p>
+<p>Another caveats to note is that the embedded links are hidden in the org-mode. For instance <code>&#91;&#91;https://google.com&#93;&#91;google site&#93;&#93;</code> appear as <a href="https://google.com">google site</a>, without the brackets. This can be annoying sometimes while editin. To change, use the command <code>M-x visible-mode ret</code></p>
+<h1 id="why_org"><a href="#why_org" class="header-anchor">Why org?</a></h1>
+<p>The answer to the question is because org-markdown has many extra features compared to github-markdown. The most notable being the fact that the code blocks can be executed with <code>C-c C-c</code> &#40;org-babel&#41;. Since I claimed something big, I believe a demonstration is in order. Following python code block results in an inline figure</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+x &#61; np.arange&#40;0,2*np.pi, 0.2&#41;
+fig, ax &#61; plt.subplots&#40;&#41;
+ax.plot&#40;x, np.sin&#40;x&#41;, &#39;-b&#39;&#41;
+fig.savefig&#40;&#39;sine.png&#39;, bbox_inches&#61;&#39;tight&#39;, dpi&#61;200&#41;
+return &quot;/journal/sine.png&quot;</code></pre>
+<p><img src="/journal/sine.png" alt="img" /></p>
+<p>Just remember to begin the source block as <code>#&#43;begin_src python :exports both :results file</code></p>
+<h2 id="issue_with_org-md-export-to-markdown"><a href="#issue_with_org-md-export-to-markdown" class="header-anchor">Issue with org-md-export-to-markdown</a></h2>
+<p>The org-document created by you can be converted to the github flavoured markdown with the command <code>M-x org-md-export-to-markdown</code>. However the issue one faces is that the title of the source blocks <code>#&#43;begin_src python</code> gets exported to <code>&#123;.python&#125;</code> instead of <code>python</code>. One way to resolve is install the package <a href="https://github.com/kawabata/ox-pandoc">ox-pandoc</a> and use the command <code>org-pandoc-export-to-markdown_mmd</code>. The alternative command <code>org-gfm-convert-to-markdown</code> from <a href="https://github.com/larstvei/ox-gfm">ox-gfm</a> works as well.</p>
+<p>Since I don&#39;want the table of contents in my page, and also I want to put some math in some of the pages, I put the following headers in the header file.</p>
+<pre><code class="language-emacs-lisp">#&#43;OPTIONS: toc:nil        &#40;no default TOC at all&#41;
+#&#43;OPTIONS: tex:t</code></pre>
+<h1 id="work_flow"><a href="#work_flow" class="header-anchor">Work Flow</a></h1>
+<p>The my work-flow of writing the blog goes</p>
+<ul>
+<li><p>Open a blank document <code>blog_crazy_head_stuff.org</code> in emacs.</p>
+</li>
+<li><p>Write all the crazy stuff that goes in my head.</p>
+</li>
+<li><p>Convert the org-document into git flavoured markdown using <code>M-x org-gfm-export-to-markdown</code>.</p>
+</li>
+<li><p>Git push the crazy stuff from my head, doucmented in <code>blog_crazy_head_stuff.md</code> and reap the inexistential benefits.</p>
+</li>
+</ul>
+<div class="page-foot">
+  <div class="copyright">
+    &copy; The anon. Last modified: August 15, 2021. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div><!-- CONTENT ENDS HERE -->
+    
+    
+        <script src="/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>
