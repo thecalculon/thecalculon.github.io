@@ -9,11 +9,11 @@
 
   <channel>
     <title>
-      <![CDATA[  Franklin Template  ]]>
+      <![CDATA[  Vikash Pandey  ]]>
     </title>
-    <link> https://thecalculon.github.io/ </link>
+    <link> https://thecalculon.github.io </link>
     <description>
-      <![CDATA[  Example website using Franklin  ]]>
+      <![CDATA[  Personal portfolio and blog site by abhishalya  ]]>
     </description>
     <atom:link
       href="https://thecalculon.github.io/feed.xml"
@@ -35,7 +35,7 @@
   
   
   <atom:author>
-    <atom:name>The anon</atom:name>
+    <atom:name>Abhinav Kaushlya</atom:name>
   </atom:author>
         
 </item>
