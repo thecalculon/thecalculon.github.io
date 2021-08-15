@@ -1,4 +1,4 @@
-@def title = "More goodies"
+@def title = "Unintented Hacks"
 @def hascode = true
 @def rss = "A short description of the page which would serve as **blurb** in a `RSS` feed; you can use basic markdown here but the whole description string must be a single line (not a multiline string). Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don't expect maths or fancy styling to work; images should be ok though: ![](https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg)"
 @def rss_title = "More goodies"
@@ -97,7 +97,7 @@ function hfun_m1fill(vname)
 end
 ```
 
-Which you can use like this `{{m1fill title}}`: **{{m1fill title}}**. Of course  in this specific case you could also have used `{{fill title menu1}}`: **{{fill title menu1}}**.
+Which you can use like this `{{m1fill title}}`: **{{m1fill title}}**. Of course  in this specific case you coul
 
 Of course these examples are not very useful, in practice you might want to use it to generate actual HTML in a specific way using Julia code.
 For instance you can use it to customise how [tag pages look like](/menu3/#customising_tag_pages).

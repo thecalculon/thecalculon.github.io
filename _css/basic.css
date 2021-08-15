@@ -3,7 +3,7 @@
 ================================================================== */
 
 nav {
-  width: 64%;
+  width: 84%;
   display: inline-block;
 }
 
@@ -43,7 +43,7 @@ header {
 }
 
 header .blog-name {
-  width: 35%;
+  width: 55%;
   display: inline-block;
   text-align: left;
   font-size: 18px;
@@ -82,7 +82,7 @@ header li a:hover {
 /* wide display: enforce maximum width of header to match content */
 @media (min-width: 940px) {
   header {
-    width: 705px;
+    width: 905px;
     margin-left: auto;
     margin-right: auto;
   }
