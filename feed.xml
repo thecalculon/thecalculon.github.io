@@ -9,9 +9,9 @@
 
   <channel>
     <title>
-      <![CDATA[  Vikash Pandey  ]]>
+      <![CDATA[  simple  ]]>
     </title>
-    <link> https://thecalculon.github.io </link>
+    <link> https://thecalculon.github.io/ </link>
     <description>
       <![CDATA[  Personal portfolio and blog site by abhishalya  ]]>
     </description>
@@ -35,7 +35,7 @@
   
   
   <atom:author>
-    <atom:name>Abhinav Kaushlya</atom:name>
+    <atom:name>Vp</atom:name>
   </atom:author>
         
 </item>
