@@ -6,7 +6,7 @@ The website_* must be defined for the RSS to work
 <!--
 Add here global page variables to use throughout your website.
 -->
-@def generate_rss = true
+@def generate_rss = false
 
 @def website_title = "simple"
 @def website_descr = "Personal portfolio and blog site by abhishalya"
