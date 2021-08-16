@@ -9,11 +9,11 @@
 
   <channel>
     <title>
-      <![CDATA[  simple  ]]>
+      <![CDATA[  Home Page  ]]>
     </title>
     <link> https://thecalculon.github.io/ </link>
     <description>
-      <![CDATA[  Personal portfolio and blog site by abhishalya  ]]>
+      <![CDATA[  Personal portfolio and blog site  ]]>
     </description>
     <atom:link
       href="https://thecalculon.github.io/feed.xml"
@@ -35,7 +35,7 @@
   
   
   <atom:author>
-    <atom:name>Vp</atom:name>
+    <atom:name>VP</atom:name>
   </atom:author>
         
 </item>
