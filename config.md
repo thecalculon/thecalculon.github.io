@@ -8,11 +8,11 @@ Add here global page variables to use throughout your website.
 -->
 @def generate_rss = false
 
-@def website_title = "simple"
-@def website_descr = "Personal portfolio and blog site by abhishalya"
+@def website_title = "Home Page"
+@def website_descr = "Personal portfolio and blog site"
 @def website_url   = "https://thecalculon.github.io/"
 
-@def author = "Vp"
+@def author = "VP"
 
 
 @def mintoclevel = 2

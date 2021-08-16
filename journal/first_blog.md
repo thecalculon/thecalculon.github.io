@@ -4,7 +4,7 @@
 
 @def tags = ["first", "try"]
 
-[Franklin](https://franklinjl.org/) is a static website generator written in [Julia](https://julialang.org/). There exists many other alternatives, like [ jekyll](https://jekyllrb.com/) written in [Ruby](https://www.ruby-lang.org/en/ ), [Pelican](https://docs.getpelican.com/en/3.6.3/) written in Python etc. I have not invested time in these alternatives to comment. [Franklin](https://franklinjl.org/) has an extensive documentation and if all the instructions are followed correctly one should be able to set a nice looking website. I basically chose the [minimal-mistakes](https://tlienart.github.io/FranklinTemplates.jl/templates/minimal-mistakes/index.html) temple. The snapshot shows the basic web-page which I was able to make.
+[Franklin](https://franklinjl.org/) is a static website generator written in [Julia](https://julialang.org/). There exists many other alternatives, like [ jekyll](https://jekyllrb.com/) written in [Ruby](https://www.ruby-lang.org/en/ ), [Pelican](https://docs.getpelican.com/en/3.6.3/) written in Python etc. I have not invested time in these alternatives to comment. [Franklin](https://franklinjl.org/) has an extensive documentation and if all the instructions are followed correctly one should be able to set a nice looking website. Because of its simplicity chose the [basic](https://tlienart.github.io/FranklinTemplates.jl) temple. The snapshot shows the basic web-page which I was able to make.
 
 ![img](/journal/snap_minimal.png)
 
