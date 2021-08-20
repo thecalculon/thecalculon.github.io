@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <link rel="stylesheet" href="/libs/highlight/github.min.css">
+   
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="icon" href="/assets/favicon.png">
+   <title> Useful latex hacks</title>  
+</head>
+<body>
+  <header>
+<div class="blog-name"><a href="/">Vikash Pandey</a></div>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/Research/">Research</a></li>
+    <li><a href="/journal/">Blogs</a></li>
+    <li><a href="/hacks/">Unintended hacks</a></li>
+  </ul>
+  <img src="/assets/hamburger.svg" id="menu-icon">
+</nav>
+</header>
+
+
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="the_preamble"><a href="#the_preamble" class="header-anchor">The preamble</a></h1>
+<p>The following snippets will allow to create a text block.</p>
+<pre><code class="language-python">\usepackage&#123;mdframed&#125;   &#37; for framing
+\newmdenv&#91;&#37;
+linecolor&#61;black,leftmargin&#61;00,&#37;
+outerlinewidth&#61;3,
+rightmargin&#61;00,
+backgroundcolor&#61;gray&#33;30,&#37;
+innertopmargin&#61;2pt,&#37;
+innerbottommargin&#61;2pt,&#37;
+&#93;&#123;shaded&#125;&#123;&#125;
+
+\newmdenv&#91;&#37;
+linecolor&#61;black,leftmargin&#61;00,&#37;
+outerlinewidth&#61;3,
+rightmargin&#61;00,
+backgroundcolor&#61;bclr,&#37;
+innertopmargin&#61;2pt,&#37;
+innerbottommargin&#61;2pt,&#37;
+&#93;&#123;notshaded&#125;&#123;&#125;</code></pre>
+<p>The text blocks needs to be inserted between</p>
+<pre><code class="language-python">\begin&#123;shaded&#125;
+   blocks of text shaded in gray
+  \end &#123;shaded&#125;
+
+\begin&#123;notshaded&#125;
+ blocks of text inside a text block.
+\end &#123;notshaded&#125;</code></pre>
+<h1 id="document"><a href="#document" class="header-anchor">Document</a></h1>
+<p><a href="https://castel.dev/">Gilies</a> has written an interesting article on how to use inkscape for diagram and have consitent font in the text as well.</p>
+<pre><code class="language-python">\usepackage&#123;import&#125;
+\usepackage&#123;xifthen&#125;
+\usepackage&#123;pdfpages&#125;
+\usepackage&#123;transparent&#125;
+
+\newcommand&#123;\incfig&#125;&#91;1&#93;&#123;&#37;
+    \def\svgwidth&#123;\columnwidth&#125;
+    \import&#123;&#125;&#123;#1.pdf_tex&#125;
+&#125;</code></pre>
+<p>The figure must be included using the following snippet.</p>
+<pre><code class="language-python">\begin&#123;figure&#125;&#91;ht&#93;
+    \centering
+    \incfig&#123;drawing-1&#125;
+\end&#123;figure&#125;</code></pre>
+<p>It is assumed that &#39;drawing-1.pdf&lt;sub&gt;tex&lt;/sub&gt;&#39; exist in the current directory. Only catch is that the figure is scaled to fit the width of the page. One can always use import inside the figure preamble itself.</p>
+<pre><code class="language-python">\begin&#123;figure&#125;
+    \centering
+    \def\svgwidth&#123;0.8\columnwidth&#125;
+    \import&#123;&#125;&#123;drawing-1.pdf_tex&#125;
+\end&#123;figure&#125;</code></pre>
+<p><strong>This is cool</strong></p>
+<div class="page-foot">
+  <div class="copyright">
+    &copy; VP. Last modified: August 20, 2021. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div><!-- CONTENT ENDS HERE -->
+    
+    
+        <script src="/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>
