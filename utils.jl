@@ -101,3 +101,54 @@ function hfun_custom_taglist()::String
     write(io, "</ul>")
     return String(take!(io))
 end
+
+
+"""
+    {{hacks}}
+
+make a list from the titles in the `/hacks/` folder.
+"""
+function hfun_hacks()
+    today = Dates.today()
+    curyear = year(today)
+    curmonth = month(today)
+    curday = day(today)
+
+    list = readdir("hacks")
+    filter!(f -> endswith(f, ".md"), list)
+    sorter(p) = begin
+        ps  = splitext(p)[1]
+        url = "/hacks/$ps/"
+        surl = strip(url, '/')
+        pubdate = pagevar(surl, :published)
+        if isnothing(pubdate)
+            return Date(Dates.unix2datetime(stat(surl * ".md").ctime))
+        end
+        return Date(pubdate, dateformat"d U Y")
+    end
+    sort!(list, by=sorter, rev=true)
+
+    io = IOBuffer()
+    write(io, """<ul class="blog-posts">""")
+    for (i, post) in enumerate(list)
+        if post == "index.md"
+            continue
+        end
+        ps  = splitext(post)[1]
+        write(io, "<li><span><i>")
+        url = "/hacks/$ps/"
+        surl = strip(url, '/')
+        title = pagevar(surl, :title)
+        pubdate = pagevar(surl, :published)
+        if isnothing(pubdate)
+            date    = "$curmonth-$curyear"
+        else
+            date    = Date(pubdate, dateformat"d U Y")
+        end
+        write(io, """</i></span><a href="$url">$title</a>""")
+    end
+    write(io, "</ul>")
+    return String(take!(io))
+end
+
+
